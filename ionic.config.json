@@ -1,0 +1,7 @@
+{
+  "name": "test-new-ionic-for-vercel-2",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { StoreModule } from '@ngrx/store';
 import {routerReducer, StoreRouterConnectingModule} from '@ngrx/router-store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,7 +26,8 @@ import {routerReducer, StoreRouterConnectingModule} from '@ngrx/router-store';
     StoreModule.forRoot({
       router: routerReducer,
     }),
-    StoreRouterConnectingModule.forRoot()
+    StoreRouterConnectingModule.forRoot(),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
   ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
